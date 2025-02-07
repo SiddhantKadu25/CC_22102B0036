@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(90deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 10px;
+            background: white;
+            color: #4CAF50;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #ddd;
+            transform: scale(1.05);
+        }
+        #courses {
+            padding: 30px 20px;
+            background: white;
+        }
+        .course-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .course {
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .course:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .course h3 {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .course img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
-
 <body>
-  <main>
-    <h1>hello</h1>
-  </main>
+    <header>
+        <h1>Welcome to Our E-Learning Platform</h1>
+        <p>Explore our courses and boost your skills today!</p>
+        <a href="#courses" class="btn">View Courses</a>
+    </header>
+    
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="course-list">
+            <div class="course" onclick="showCourseDetails('Web Development')">
+                <img src="https://media.istockphoto.com/id/537331500/photo/programming-code-abstract-technology-background-of-software-deve.jpg?s=612x612&w=0&k=20&c=jlYes8ZfnCmD0lLn-vKvzQoKXrWaEcVypHnB5MuO-g8=" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Learn HTML, CSS, and JavaScript to build modern websites.</p>
+            </div>
+            <div class="course" onclick="showCourseDetails('Data Science')">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/005/442/693/small/data-science-analytics-internet-and-technology-concept-concept-photo.jpg" alt="Data Science">
+                <h3>Data Science</h3>
+                <p>Master Python, machine learning, and data visualization.</p>
+            </div>
+            <div class="course" onclick="showCourseDetails('Digital Marketing')">
+                <img src="https://www.shutterstock.com/image-photo/analyst-uses-computer-dashboard-data-600nw-2285412737.jpg" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+                <p>Improve your marketing skills with SEO and social media strategies.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 E-Learning Platform. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".btn").addEventListener("click", function() {
+                alert("Explore our courses and enhance your skills!");
+            });
+        });
+        
+        function showCourseDetails(courseName) {
+            alert("You clicked on " + courseName + "! Start learning today.");
+        }
+    </script>
 </body>
-
 </html>
